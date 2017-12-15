@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body id="js-body">
+    <div id="js-holder" ondblclick="alert('Kliknales x2!');">
+        <button onclick="MyButton_Click(123);">Kliknij mnie bejbe</button>
+        <button onclick="">Kliknij mnie bejbe</button>
+        <button id="js-button">Kliknij mnie</button>
+    </div>
+	
+	<div id="div1" onclick="alert('div1 klikniety');"> Text1
+		<div id="div2" onclick="alert('div2 klikniety'); event.stopPropagation();"> Text2
+			<p onclick="alert('Paragraf klikniety'); return false;">Paragraf</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
