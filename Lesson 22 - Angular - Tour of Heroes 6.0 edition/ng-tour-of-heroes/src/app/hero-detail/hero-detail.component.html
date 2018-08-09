@@ -6,7 +6,7 @@
   <div>
     <label>
       Name:
-      <input [(ngModel)]="hero.name" placeholder="Write a name" />
+      <input [(ngModel)]="hero.name" placeholder="Write a name" (keyup)="onHeroNameChange($event)" />
     </label>
   </div>
 </div>
