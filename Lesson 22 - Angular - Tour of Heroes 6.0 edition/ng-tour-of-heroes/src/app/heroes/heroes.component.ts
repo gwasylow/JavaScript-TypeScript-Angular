@@ -11,8 +11,7 @@ import { MessagesService } from '../messages.service';
 export class HeroesComponent implements OnInit {
   
   public heroes : Hero[];
-  public selectedHero : Hero;
-
+  
   constructor(private heroService : HeroService,
     private messagesService : MessagesService) { }
 
@@ -23,11 +22,6 @@ export class HeroesComponent implements OnInit {
   public getHeroes() : void {
     //Data will be loaded asynchroniously from a Hero Service using Dependency Injection.
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
-
-  onSelect(hero: Hero) {
-    this.messagesService.Add(`${hero.name} has been selected from a list of Heroes.`);
-    this.selectedHero= hero;
   }
 }
 

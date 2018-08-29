@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 //Map and explain to ng how are we going to navigate in application (UI/URL)
 const routesMap : Routes = [
-   { path : 'heroes', component: HeroesComponent }
+   { path : '', redirectTo: '/dashboard', pathMatch: 'full'},
+   { path : 'heroes', component: HeroesComponent },
+   { path : 'dashboard', component: DashboardComponent },
+   { path : 'details/:id', component: HeroDetailComponent }
 ];
 
 @NgModule({
