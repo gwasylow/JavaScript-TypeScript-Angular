@@ -32,4 +32,7 @@ export class HeroDetailComponent implements OnInit {
     this.messagesService.Add(`${event.target.value} name changed`);
   }
 
+  public goBack() : void {
+    this.location.back();
+  }
 }
