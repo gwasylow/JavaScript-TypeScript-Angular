@@ -23,12 +23,12 @@ import { InMemoryDataService } from './in-memory-data.service';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     //Enable in-memory-web-api to simulate the http requests
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation : false }
-    ),
-    AppRoutingModule
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
