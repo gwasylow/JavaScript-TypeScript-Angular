@@ -12,10 +12,15 @@ export class HeroService {
 
   //define default address of heroes on the server (in-memory-web-api)
   private heroesUrlEndPoint = 'api/heroes';
+  //http configuration
+  private httpOptions = { 
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  };
 
   constructor(private http : HttpClient,
-    private messagesService : MessagesService
-    ) { }
+    private messagesService : MessagesService) 
+  {       
+  }
 
   private handleError<T> (operation = 'operation', result?: T){
     return (error: any) : Observable<T> => {
@@ -57,5 +62,23 @@ export class HeroService {
   
   private log(message : string) : void {
     this.messagesService.Add(`Hero.Service log: ${message}`)
+  }
+
+  public updateHero(hero : Hero) : Observable<any>
+  {
+    return this.http.put(this.heroesUrlEndPoint, hero, this.httpOptions)
+      .pipe(
+        tap(obj => this.log(`Hero with id=${hero.id} updated`)),
+        catchError(this.handleError<Hero>(`Hero Update failed for id=${hero.id}`))
+      );
+  }
+
+  public addHero(hero : Hero) : Observable<Hero>
+  {
+    return this.http.post<Hero>(this.heroesUrlEndPoint, hero, this.httpOptions)
+      .pipe(
+        tap(obj => this.log(`Hero with id=${hero.id} updated`)),
+        catchError(this.handleError<Hero>(`Hero Update failed for id=${hero.id}`))
+      );
   }
 }

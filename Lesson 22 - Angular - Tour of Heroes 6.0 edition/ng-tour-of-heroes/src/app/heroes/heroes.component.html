@@ -14,4 +14,13 @@
       </a>
     </li>
   </ul>
+  <div>
+    <h3>
+      Add new Hero
+    </h3>
+    <label>
+      Hero Name <input #heroName />
+    </label>
+    <button (click)="addHero(heroName.value)">Register new Hero</button>
+  </div>
 </div>
