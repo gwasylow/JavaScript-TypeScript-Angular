@@ -81,4 +81,25 @@ export class HeroService {
         catchError(this.handleError<Hero>(`Hero Update failed for id=${hero.id}`))
       );
   }
+
+  public deleteHero(hero: Hero | number): Observable<Hero>{
+    const id = typeof hero === 'number' ? hero : hero.id;
+    
+    return this.http.delete<Hero>(`${this.heroesUrlEndPoint}/${id}`, this.httpOptions)
+      .pipe(
+        tap(obj => this.log(`Hero with id=${id} deleted`)),
+        catchError(this.handleError<Hero>(`Hero delete failed for id=${id}`))
+      );
+  }
+
+  public searchHeroes(searchStr: String): Observable<Hero[]>{
+    if (!searchStr.trim())
+      return of([]);
+
+      return this.http.get<Hero[]>(`${this.heroesUrlEndPoint}/?name=${searchStr}`)
+      .pipe(
+        tap(obj => this.log(`Hero ${searchStr} found.`)),
+        catchError(this.handleError<Hero[]>(`Hero ${searchStr} search error.`))
+      );
+  }
 }

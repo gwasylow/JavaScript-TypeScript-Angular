@@ -1,6 +1,9 @@
 <h3>
   Top Heroes
 </h3>
+<div> 
+  <a routerLink="/web-forms">Validation form example</a> 
+</div> 
 <div class="grid grid-pad">
   <a *ngFor="let hero of topHeroes" class="col-1-4" routerLink="/details/{{hero.id}}">
     <div class="module hero">
@@ -10,3 +13,5 @@
     </div>
   </a>
 </div>
+
+<app-hero-search></app-hero-search>
