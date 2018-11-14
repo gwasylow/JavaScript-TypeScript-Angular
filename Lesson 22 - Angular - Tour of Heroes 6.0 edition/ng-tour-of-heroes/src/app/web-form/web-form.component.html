@@ -2,10 +2,10 @@
   Template driven form!
 </p>
 
-<input id="name" class="form-control" required minlength="4" maxlength="8" appForbiddenName="Konrad" [(ngModel)]="hero.name" #name="ngModel"/>
+<input id="name" class="form-control" required appForbiddenNameRequired minlength="4" maxlength="8" appForbiddenName="Konrad" [(ngModel)]="hero.name" #name="ngModel"/>
 
 <!-- dirty flag- is set when the value is being changed in the model or on the page -->
-<!-- touched flag- change provided by user interface -->
+<!-- touched flag- change provided by user interface / manipulated bu form -->
 <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" style="color:red;">
   <div *ngIf="name.errors.required">
     Name is required.

@@ -13,6 +13,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { WebFormComponent } from './web-form/web-form.component';
+import { ForbiddenValidationDirectiveDirective } from './forbidden-validation-directive.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WebFormComponent } from './web-form/web-form.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    WebFormComponent
+    WebFormComponent,
+    ForbiddenValidationDirectiveDirective
   ],
   imports: [
     BrowserModule,
