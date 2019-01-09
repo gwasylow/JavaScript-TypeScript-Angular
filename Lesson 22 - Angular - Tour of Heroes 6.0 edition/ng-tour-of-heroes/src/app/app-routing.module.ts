@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { WebFormComponent } from 'src/app/web-form/web-form.component';
+import { WebFormComponent } from './web-form/web-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+
 
 //Map and explain to ng how are we going to navigate in application (UI/URL)
 const routesMap : Routes = [
@@ -12,7 +15,9 @@ const routesMap : Routes = [
    { path : 'heroes', component: HeroesComponent },
    { path : 'dashboard', component: DashboardComponent },
    { path : 'details/:id', component: HeroDetailComponent },
-   { path : 'web-forms', component: WebFormComponent}
+   { path : 'web-forms', component: WebFormComponent},
+   { path : 'reactive-forms', component: ReactiveFormsComponent},
+   { path : 'profile-editor-form', component: ProfileEditorComponent}
 ];
 
 @NgModule({

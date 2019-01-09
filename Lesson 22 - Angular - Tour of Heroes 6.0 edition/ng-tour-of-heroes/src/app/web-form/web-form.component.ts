@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+
+import { ForbiddenValidatorDirective } from '../shared/forbidden-name.directive';
 
 @Component({
   selector: 'app-web-form',
@@ -9,12 +10,12 @@ import { HeroService } from '../hero.service';
 })
 export class WebFormComponent implements OnInit {
 
-  public hero : Hero;
+  public hero: Hero;
 
   constructor() { }
 
   ngOnInit() {
-    this.hero = new Hero();
+    this.hero = { id: 1, name: 'andrzej'};
   }
 
 }

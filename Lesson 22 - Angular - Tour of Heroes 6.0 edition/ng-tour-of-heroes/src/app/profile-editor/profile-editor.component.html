@@ -1,0 +1,22 @@
+<p></p>
+<form [formGroup]="profileEditForm" (ngSubmit)="onFormSubmit()">
+  <div>
+    <label>first name: <input type="text" formControlName="firstName" /> </label>
+  </div>
+  <div>
+    <label>last name: <input type="text" formControlName="lastName" /> </label>
+  </div>
+
+  <p>address detailes</p>
+  <div formGroupName="addressDetailes">
+    <label>street: <input type="text" formControlName="street" /> </label>
+    <label>city: <input type="text" formControlName="city" /> </label>
+    <label>country: <input type="text" formControlName="country" /> </label>
+  </div>
+  <p></p>
+  <div>
+    <button type="submit" [disabled]="!profileEditForm.valid">send data</button>
+    <button type="button" (click)="updateProfile()">update profile</button>
+    <button type="button" (click)="resetProfile()">reset profile</button>
+  </div>
+</form>

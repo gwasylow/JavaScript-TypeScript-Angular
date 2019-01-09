@@ -1,0 +1,10 @@
+<label>
+  name:
+  <input type="text" [formControl]="name" />
+</label>
+<p>
+  Form value: {{name.value}}
+</p>
+<p>
+  <button (click)="updateReactiveFormByModel()">Update from model</button>
+</p>
