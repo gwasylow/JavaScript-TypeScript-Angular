@@ -1,0 +1,28 @@
+<p>Debug status {{profileForm.status}}</p>
+<form [formGroup]="profileForm" (ngSubmit)="onFormSubmit()">
+  <div>
+    <label>first name: <input type="text" formControlName="firstName" /> </label>
+  </div>
+  <div>
+    <label>last name: <input type="text" formControlName="lastName" /> </label>
+  </div>
+
+  <p>address detailes</p>
+  <div formGroupName="address">
+    <label>street: <input type="text" formControlName="street" /> </label>
+    <label>city: <input type="text" formControlName="city" /> </label>
+    <label>country: <input type="text" formControlName="country" /> </label>
+  </div>
+  <p></p>
+  <div>
+    <button type="submit" [disabled]="!profileForm.valid">send data</button>
+  </div>
+  <p></p>
+  <p>Dynamically created forms</p>
+  <div formArrayName="aliases">
+    <div *ngFor="let c of aliases.controls; let id=index;">
+      <input type="text" [formControlName]="id"/>
+    </div>
+    <button (click)="addControlDynamicallyToAliases()">Add new Form</button>
+  </div>
+</form>
