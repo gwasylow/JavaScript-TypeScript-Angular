@@ -8,6 +8,7 @@ import { WebFormComponent } from './web-form/web-form.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { SecurityComponent } from './security/security.component';
 
 
 //Map and explain to ng how are we going to navigate in application (UI/URL)
@@ -19,7 +20,9 @@ const routesMap : Routes = [
    { path : 'web-forms', component: WebFormComponent},
    { path : 'reactive-forms', component: ReactiveFormsComponent},
    { path : 'profile-editor-form', component: ProfileEditorComponent},
-   { path : 'reactive-form-builder', component: FormBuilderComponent}
+   { path : 'reactive-form-builder', component: FormBuilderComponent},
+   { path : 'security', component: SecurityComponent }
+
 ];
 
 @NgModule({

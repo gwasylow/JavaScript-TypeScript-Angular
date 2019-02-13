@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+  console.log('yyy');
+</script>
+
+<p>
+  security works!
+</p>
+
+<div [innerHtml]="html"></div>
+
+<p>{{ htmlSnippet }}</p>
+<p>javaScriptSnippet: {{ javaScriptSnippet }}</p>
+<p [innerHtml]="javaScriptSnippet"></p>
+<br /><br />
+<p>executableJavaScriptSnippet:</p>
+<div [innerHTML]="javaScriptSnippet"></div>
+<div [innerHTML]="executableJavaScriptSnippet"></div>
+<br /><br />
+<h4>Trusted/Untrusted urls</h4>
+<p><a [href]="dangerousUrl">Click me baby one more time (safe).</a></p>
+<p><a [href]="executableUnsafeUrl">Click me baby one more time (be careful).</a></p>

@@ -17,6 +17,7 @@ import { ForbiddenValidatorDirective } from './forbidden-validator.directive';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { SecurityComponent } from './security/security.component';
 // import { appendFileSync } from 'fs';
 
 
@@ -33,7 +34,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     ForbiddenValidatorDirective,
     ReactiveFormsComponent,
     ProfileEditorComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
