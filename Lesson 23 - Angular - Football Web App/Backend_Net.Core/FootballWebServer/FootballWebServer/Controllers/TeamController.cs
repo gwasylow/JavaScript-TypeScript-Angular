@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FootballWebServer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +12,11 @@ namespace FootballWebServer.Controllers
     [Route("api/Team")]
     public class TeamController : Controller
     {
+
         [HttpGet]
         public void Index()
         {
+            InitializeFifaCompetition();
         }
 
         [HttpGet("{id}")]
@@ -25,6 +28,7 @@ namespace FootballWebServer.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+
         }
 
         [HttpPut("{id}")]
@@ -35,6 +39,11 @@ namespace FootballWebServer.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        private void InitializeFifaCompetition()
+        {
+
         }
     }
 }
