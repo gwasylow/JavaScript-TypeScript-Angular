@@ -18,7 +18,9 @@ namespace FootballWebServer.Controllers
         [HttpGet]
         public ActionResult<FifaLadderNode> GetLadder()
         {
-            return _fifaCupRepository.InitializeGame();
+            _fifaCupRepository.InitializeGame();
+            _fifaCupRepository.PlayMatches();
+            return null;
         }
     }
 }

@@ -5,19 +5,26 @@ using System.Threading.Tasks;
 
 namespace FootballWebServer.Models
 {
+
     public class FifaLadderNode
     {
-        public Team Team { get; set; }
-        public IEnumerable<FifaLadderNode> LadderNodes { get; set; }
+        public Team TeamA { get; set; }
+        public Team TeamB { get; set; }
+        public MatchScore Score { get; set; }
+        public List<FifaLadderNode> LadderNodes { get; set; }
+
+        public FifaLadderNode this[int index]
+        {
+            get { return LadderNodes[index]; }
+        }
 
         public FifaLadderNode()
         {
             LadderNodes = new List<FifaLadderNode>();
         }
-        public void InitializeGameLevel(IEnumerable<FifaLadderNode> ladderNode)
+        public void InitializeGameLevel(List<FifaLadderNode> ladderNode)
         {
-            //TODO: refactor later
-            (LadderNodes as List<FifaLadderNode>).AddRange(ladderNode);
+            LadderNodes.AddRange(ladderNode);
         }
 
     }
