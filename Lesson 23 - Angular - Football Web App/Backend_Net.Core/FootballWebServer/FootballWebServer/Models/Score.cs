@@ -2,12 +2,12 @@
 
 namespace FootballWebServer.Models
 {
-    public class MatchScore
+    public class Score
     {
         public int ScoreA { get; private set; }
         public int ScoreB { get; private set; }
 
-        public MatchScore()
+        public Score()
         {
             while (ScoreA == ScoreB)
             {

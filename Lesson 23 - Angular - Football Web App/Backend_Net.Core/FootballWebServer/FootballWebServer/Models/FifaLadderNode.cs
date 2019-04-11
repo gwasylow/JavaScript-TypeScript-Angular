@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 namespace FootballWebServer.Models
 {
 
-    public class FifaLadderNode
+    public class FifaLadderNode : ICloneable
     {
         public Team TeamA { get; set; }
         public Team TeamB { get; set; }
-        public MatchScore Score { get; set; }
+        public Team WinningTeam { get; set; }
+
+        public Score Score { get; set; }
         public List<FifaLadderNode> LadderNodes { get; set; }
 
         public FifaLadderNode this[int index]
@@ -26,6 +28,18 @@ namespace FootballWebServer.Models
         {
             LadderNodes.AddRange(ladderNode);
         }
+        public void PlayMatch()
+        {
+            Score = new Score();
+            if (Score.ScoreA > Score.ScoreB)
+                WinningTeam = TeamA;
+            else
+                WinningTeam = TeamB;
+        }
 
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

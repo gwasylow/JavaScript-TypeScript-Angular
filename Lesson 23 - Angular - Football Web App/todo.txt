@@ -1,0 +1,4 @@
+1. Dynamiczne wyświetlenie drabinki
+a) Wyświetlanie drabinki z lewej do prawej
+b) Tekstowe wyświetlenie drabiny
+c) Graficzne wyświetlenie drabiny

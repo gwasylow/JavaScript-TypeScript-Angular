@@ -5,10 +5,14 @@ using System.Threading.Tasks;
 
 namespace FootballWebServer.Models
 {
-    public class Team
+    public class Team : ICloneable
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

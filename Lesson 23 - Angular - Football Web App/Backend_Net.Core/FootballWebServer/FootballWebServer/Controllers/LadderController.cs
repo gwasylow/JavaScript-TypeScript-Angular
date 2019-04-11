@@ -1,5 +1,6 @@
 ﻿using FootballWebServer.Interfaces;
 using FootballWebServer.Models;
+using FootballWebServer.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FootballWebServer.Controllers
@@ -18,9 +19,9 @@ namespace FootballWebServer.Controllers
         [HttpGet]
         public ActionResult<FifaLadderNode> GetLadder()
         {
-            _fifaCupRepository.InitializeGame();
-            _fifaCupRepository.PlayMatches();
-            return null;
+            _fifaCupRepository.InitializeTeams(new string[] { "Wisła Kraków", "Lech Poznań", "Pogoń Szczecin", "Arka Gdynia", "Raków Częstochowa", "Stal Stalowa Wola", "Siara", "Unia Tarnów" });
+            return _fifaCupRepository.ComputeWorldCup();
+            
         }
     }
 }

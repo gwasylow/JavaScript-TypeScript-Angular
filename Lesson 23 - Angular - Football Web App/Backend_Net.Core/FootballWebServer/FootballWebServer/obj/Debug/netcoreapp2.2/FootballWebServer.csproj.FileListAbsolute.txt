@@ -25,3 +25,4 @@ C:\Users\a0773228\Documents\Repo\Trainings\Lesson 23 - Angular - Football Web Ap
 C:\Users\a0773228\Documents\Repo\Trainings\Lesson 23 - Angular - Football Web App\Backend_Net.Core\FootballWebServer\FootballWebServer\obj\Debug\netcoreapp2.2\FootballWebServer.RazorTargetAssemblyInfo.cache
 C:\Users\a0773228\Documents\Repo\Trainings\Lesson 23 - Angular - Football Web App\Backend_Net.Core\FootballWebServer\FootballWebServer\obj\Debug\netcoreapp2.2\FootballWebServer.dll
 C:\Users\a0773228\Documents\Repo\Trainings\Lesson 23 - Angular - Football Web App\Backend_Net.Core\FootballWebServer\FootballWebServer\obj\Debug\netcoreapp2.2\FootballWebServer.pdb
+C:\Users\a0773228\Documents\Repo\Trainings\Lesson 23 - Angular - Football Web App\Backend_Net.Core\FootballWebServer\FootballWebServer\obj\Debug\netcoreapp2.2\FootballWebServer.csprojAssemblyReference.cache

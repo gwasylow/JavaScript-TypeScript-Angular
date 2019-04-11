@@ -5,7 +5,7 @@ namespace FootballWebServer.Interfaces
 {
     public interface IFifaWorldCupRepository
     {
-        FifaLadderNode InitializeGame();
-        void PlayMatches();
+        FifaLadderNode ComputeWorldCup();
+        void InitializeTeams(string[] Teams);
     }
 }
