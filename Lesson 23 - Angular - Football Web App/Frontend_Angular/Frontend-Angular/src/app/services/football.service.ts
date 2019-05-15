@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 })
 export class FootballService {
 
-  private _endPointUrl = 'http://localhost:49712/api/ladder'
+  private _endPointUrl = 'https://webapp01eur.azurewebsites.net/api/ladder';
 
   constructor(private http: HttpClient) { }
 
