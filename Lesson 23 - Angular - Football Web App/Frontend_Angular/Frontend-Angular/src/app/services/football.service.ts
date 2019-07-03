@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+import { ViewModels } from '../models/football';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,17 @@ export class FootballService {
 
   constructor(private http: HttpClient) { }
 
-  public getFootballLadder(): Observable<models.LadderNode> {
-    return this.http.get<models.LadderNode>(this._endPointUrl)
-            .pipe(catchError(this.handleError<models.LadderNode>('getFootballLadder', null))) ; 
+  public getFootballLadder(): Observable<ViewModels.LadderNode> {
+    return this.http.get<ViewModels.LadderNode>(this._endPointUrl)
+            .pipe(catchError(this.handleError<ViewModels.LadderNode>('getFootballLadder', null))) ; 
+  }
+
+  public getString(): Observable<string> {
+    return of("Test") ; 
+  }
+
+  public getObject(): Observable<ViewModels.TeamA> {
+    return of({id: 1, name: 'Test name'}) ; 
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

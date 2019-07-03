@@ -1,19 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FootballService } from './services/football.service';
+import { ViewModels } from './models/football';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  title = 'Frontend-Angular';
+  public title = 'Frontend-Angular';
+  public ladderModel: ViewModels.LadderNode;
+  public strTest: string;
+  public objTest: ViewModels.TeamA;
 
   constructor(private _footballService: FootballService ) {
-    _footballService.getFootballLadder().subscribe(data => {
-      console.log(data);
-    });
   }
 
+  ngOnInit(): void {
+    this._footballService.getFootballLadder().subscribe(data => {
+      this.ladderModel = data;
+      console.log('App.component: ' + this.ladderModel);
+      console.log(this.ladderModel.teamA.name);
+    });
+
+    // this._footballService.getString().subscribe(data => {
+    //   this.strTest = data;
+    //   // console.log(this.strTest);
+    // })
+
+    // this._footballService.getObject().subscribe(data => {
+    //   this.objTest = data;
+    //   console.log(this.objTest);
+    // })
+  }
 }

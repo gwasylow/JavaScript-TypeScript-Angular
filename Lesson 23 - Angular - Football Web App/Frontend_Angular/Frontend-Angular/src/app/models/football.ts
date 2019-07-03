@@ -1,26 +1,26 @@
-declare module models {
+export module ViewModels {
 
-    export interface TeamA {
+    export class TeamA {
         id: number;
         name: string;
     }
 
-    export interface TeamB {
+    export class TeamB {
         id: number;
         name: string;
     }
 
-    export interface WinningTeam {
+    export class WinningTeam {
         id: number;
         name: string;
     }
 
-    export interface Score {
+    export class Score {
         scoreA: number;
         scoreB: number;
     }
 
-    export interface LadderNode {
+    export class LadderNode {
         teamA: TeamA;
         teamB: TeamB;
         winningTeam: WinningTeam;

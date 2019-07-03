@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ViewModels } from '../models/football';
 
 @Component({
   selector: 'app-score-view',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreViewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  ladderNode: any;
+
+  constructor() { 
+  }
 
   ngOnInit() {
   }
