@@ -1,31 +1,28 @@
-declare module models {
 
-    export interface TeamA {
-        id: number;
-        name: string;
+//declare module models {
+
+    class Team {
+        private _id: number;
+        private _name: string;
+
+        constructor(id : number, name : string) 
+        {
+            this._id = id;
+            this._name = name;
+        }
     }
 
-    export interface TeamB {
-        id: number;
-        name: string;
-    }
-
-    export interface WinningTeam {
-        id: number;
-        name: string;
-    }
-
-    export interface Score {
+    class Score {
         scoreA: number;
         scoreB: number;
     }
 
-    export interface LadderNode {
-        teamA: TeamA;
-        teamB: TeamB;
-        winningTeam: WinningTeam;
+    class LadderNodeModel {
+        teamA: Team;
+        teamB: Team;
+        winningTeam: Team;
         score: Score;
-        ladderNodes: LadderNode[];
+        ladderNodes: LadderNodeModel[];
     }
 
-}
+//}
