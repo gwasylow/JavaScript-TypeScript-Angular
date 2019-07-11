@@ -2,6 +2,13 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <app-score-view></app-score-view>
+
+  <!-- <ul *ngFor='let level of ladderModel.ladderNodes'>
+    {{}}
+  </ul> -->
+
+  <app-score-view [ladderNode]="ladderModel"></app-score-view>
+
+
 </div>
 <router-outlet></router-outlet>

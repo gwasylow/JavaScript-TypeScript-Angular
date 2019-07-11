@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 //declare module models {
 
@@ -13,14 +14,41 @@
     }
 
     class Score {
+=======
+export module ViewModels {
+
+    export class TeamA {
+        id: number;
+        name: string;
+    }
+
+    export class TeamB {
+        id: number;
+        name: string;
+    }
+
+    export class WinningTeam {
+        id: number;
+        name: string;
+    }
+
+    export class Score {
+>>>>>>> 5a663ac8ea57d6625fdfd674736363599ca19579
         scoreA: number;
         scoreB: number;
     }
 
+<<<<<<< HEAD
     class LadderNodeModel {
         teamA: Team;
         teamB: Team;
         winningTeam: Team;
+=======
+    export class LadderNode {
+        teamA: TeamA;
+        teamB: TeamB;
+        winningTeam: WinningTeam;
+>>>>>>> 5a663ac8ea57d6625fdfd674736363599ca19579
         score: Score;
         ladderNodes: LadderNodeModel[];
     }
