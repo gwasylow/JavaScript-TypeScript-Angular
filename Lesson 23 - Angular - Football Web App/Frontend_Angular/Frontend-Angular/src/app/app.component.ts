@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from './services/football.service';
-import { ViewModels } from './models/football';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,9 @@ import { ViewModels } from './models/football';
 export class AppComponent implements OnInit {
 
   public title = 'Frontend-Angular';
-  public ladderModel: ViewModels.LadderNode;
+  public ladderModel: LadderNode;
   public strTest: string;
-  public objTest: ViewModels.TeamA;
+  public objTest: Team;
 
   constructor(private _footballService: FootballService ) {
   }

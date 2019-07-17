@@ -1,10 +1,18 @@
-<<<<<<< HEAD
 
 //declare module models {
 
     class Team {
         private _id: number;
         private _name: string;
+        
+        
+        public get id() : number {
+            return this._id;
+        }
+
+        public get name() : string {
+            return this._name;
+        }        
 
         constructor(id : number, name : string) 
         {
@@ -14,43 +22,16 @@
     }
 
     class Score {
-=======
-export module ViewModels {
-
-    export class TeamA {
-        id: number;
-        name: string;
-    }
-
-    export class TeamB {
-        id: number;
-        name: string;
-    }
-
-    export class WinningTeam {
-        id: number;
-        name: string;
-    }
-
-    export class Score {
->>>>>>> 5a663ac8ea57d6625fdfd674736363599ca19579
         scoreA: number;
         scoreB: number;
     }
 
-<<<<<<< HEAD
-    class LadderNodeModel {
+    class LadderNode {
         teamA: Team;
         teamB: Team;
         winningTeam: Team;
-=======
-    export class LadderNode {
-        teamA: TeamA;
-        teamB: TeamB;
-        winningTeam: WinningTeam;
->>>>>>> 5a663ac8ea57d6625fdfd674736363599ca19579
         score: Score;
-        ladderNodes: LadderNodeModel[];
+        ladderNodes: LadderNode[];
     }
 
 //}

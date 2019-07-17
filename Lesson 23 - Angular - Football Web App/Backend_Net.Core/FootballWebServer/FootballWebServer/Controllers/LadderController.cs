@@ -19,9 +19,10 @@ namespace FootballWebServer.Controllers
         [HttpGet]
         public ActionResult<FifaLadderNode> GetLadder()
         {
-            _fifaCupRepository.InitializeTeams(new string[] { "Wisła Kraków", "Lech Poznań", "Pogoń Szczecin", "Arka Gdynia", "Raków Częstochowa", "Stal Stalowa Wola", "Siara", "Unia Tarnów" });
+            _fifaCupRepository.InitializeTeams(new string[] { "Wisła Kraków", "Lech Poznań", "Pogoń Szczecin", "Arka Gdynia", "Raków Częstochowa", "Stal Stalowa Wola", "Siara", "Unia Tarnów",
+                                                            "RKS  HUWDU", "Stal Stocznia", "Sandecja Nowy Sącz", "Amica Wronki", "Flota Świnouście", "Drawa Drawsko Pomorskie", "Szmacianka", "Kozia Wólka"});
             return _fifaCupRepository.ComputeWorldCup();
-            
+
         }
     }
 }

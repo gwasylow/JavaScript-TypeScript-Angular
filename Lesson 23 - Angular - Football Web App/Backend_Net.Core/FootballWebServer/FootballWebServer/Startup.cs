@@ -30,7 +30,16 @@ namespace FootballWebServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IFifaWorldCupRepository, FifaWorldCupRepository>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +47,7 @@ namespace FootballWebServer
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            app.UseCors("AllowOrigin");
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -1,16 +1,20 @@
-<div style="border: 1px solid red; width: 250px">
-  <div style="text-align: right;">
-<<<<<<< HEAD
-    {{_ladderNodeModel.TeamA.name}}
-=======
-    {{ladderNode}}
->>>>>>> 5a663ac8ea57d6625fdfd674736363599ca19579
+<div style="margin-left: 150px; padding: 5px;">
+  <div *ngIf="ladderNode" style="border: 1px solid red; width: 250px; padding: 15px;">
+    <div style="text-align: right;">
+      Team A: {{ladderNode.teamA.name}}
+    </div>
+    <div style="text-align: left; padding: 15px;">
+      Winner: {{ladderNode.winningTeam.name}} <br>
+      Score: {{ladderNode.score.scoreA}}:{{ladderNode.score.scoreB}}
+    </div>
+    <div style="text-align: right;">
+      Team B: {{ladderNode.teamB.name}}
+    </div>
   </div>
-  <div style="text-align: left;">
-    Winner: TeamA <br>
-    Score: 1:0
-  </div>
-  <div style="text-align: right;">
-    TeamB
+
+  <div *ngIf="ladderNode">
+    <div *ngFor="let node of ladderNode.ladderNodes">
+      <app-score-view [ladderNode]="node"></app-score-view>
+    </div>
   </div>
 </div>

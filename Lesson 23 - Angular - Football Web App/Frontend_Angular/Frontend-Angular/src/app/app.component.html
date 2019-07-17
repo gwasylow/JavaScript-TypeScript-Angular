@@ -3,11 +3,11 @@
     Welcome to {{ title }}!
   </h1>
 
-  <!-- <ul *ngFor='let level of ladderModel.ladderNodes'>
-    {{}}
-  </ul> -->
-
   <app-score-view [ladderNode]="ladderModel"></app-score-view>
+  
+  <!-- <div *ngIf="ladderModel">
+    {{ladderModel.teamA.name}}
+  </div> -->
 
 
 </div>
